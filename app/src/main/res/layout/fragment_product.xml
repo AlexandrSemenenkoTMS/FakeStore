@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="product"
+            type="dev.fest.fakestore.dto.Product" />
+    </data>
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/imageTitleInfoScreen"
+            android:layout_width="70dp"
+            android:layout_height="70dp"
+            android:layout_margin="16dp"
+            android:src="@{product.image}"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/nameProductInfoScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{product.title}"
+            android:textColor="@color/black"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageTitleInfoScreen"
+            tools:text="Name product" />
+
+        <TextView
+            android:id="@+id/descriptionProductInfoScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{product.description}"
+            android:textColor="@color/black"
+            android:textStyle="italic"
+            app:layout_constraintEnd_toEndOf="@+id/nameProductInfoScreen"
+            app:layout_constraintStart_toStartOf="@+id/nameProductInfoScreen"
+            app:layout_constraintTop_toBottomOf="@+id/nameProductInfoScreen"
+            tools:text="Description" />
+
+        <TextView
+            android:id="@+id/priceProductInfoScreen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="8dp"
+            android:text="@{product.price.toString()}"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="@+id/descriptionProductInfoScreen"
+            app:layout_constraintStart_toStartOf="@+id/descriptionProductInfoScreen"
+            app:layout_constraintTop_toBottomOf="@+id/descriptionProductInfoScreen"
+            tools:text="Price product" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
